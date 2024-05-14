@@ -1,0 +1,2 @@
+// Lists all documents that match a certain name in the collection 'school'
+db.school.find({"name": "Holberton school"});
