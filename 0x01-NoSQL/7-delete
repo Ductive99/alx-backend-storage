@@ -1,0 +1,2 @@
+// Deletes all documents with a certain name in the collection 'school'
+db.school.remove({"name": {$eq: "Holberton school}})
