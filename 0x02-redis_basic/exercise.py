@@ -40,15 +40,27 @@ def replay(fn: Callable) -> None:
     r = redis.Redis()
     fname = fn.__qualname__
     val = r.get(fname)
-    val = int(val.decode("utf-8")
-    print("{} was called {} times:".format(funame, val))
+    try:
+        val = int(val.decode("utf-8"))
+    except Exception:
+        value = 0
+
+    print("{} was called {} times:".format(fname, val))
     inputs = r.lrange("{}:inputs".format(fname), 0, -1)
     outputs = r.lrange("{}:outputs".format(fname), 0, -1)
 
-    for input, output in zip(inpus, outputs):
-        input = input.decode("utf-8")
-        output = output.decode("utf-8")
-        print(f"{fname}(*{input}) -> {output}")
+    for input_data, output in zip(inputs, outputs):
+        try:
+            input_data = input_data.decode("utf-8")
+        except Exception:
+            input_data = ""
+
+        try:
+            output = output.decode("utf-8")
+        except Exception:
+            output = ""
+
+        print(f"{fname}(*{input_data}) -> {output}")
 
 
 class Cache:
