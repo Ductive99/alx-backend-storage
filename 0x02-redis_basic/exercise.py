@@ -27,7 +27,7 @@ class Cache:
     def get_str(self, key: str) -> str:
         """Gets a string from Redis storage"""
         val = self._redis.get(key)
-        return value.decode("utf-8")
+        return val.decode("utf-8")
 
     def get_int(self, key: str) -> int:
         """Gets an int from Redis storage"""
