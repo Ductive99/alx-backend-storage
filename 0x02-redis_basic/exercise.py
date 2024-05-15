@@ -2,7 +2,7 @@
 """ Redis exercise """
 import redis
 import uuid
-
+from typing import Union
 
 class Cache:
     """ Stores data using Redis """
