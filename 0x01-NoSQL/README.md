@@ -20,7 +20,7 @@ There are mainly four areas of differences between the two:
 | 3-all                  | List all documents in the collection _school_ |
 | 4-match                | List all documents with _name="Holberton school"_ in the collection _school_ |
 | 5-count                | Display the number of documents in the collection _school_ |
-| 6-update               | Add a new attribute to a document in the collection _school_<br>- Updaate only documents with _name="Holberton school"_<br>- Add the attribute _address_ with the value _972 Mission street_ |
+| 6-update               | Add a new attribute to a document in the collection _school_<br>- Update only documents with _name="Holberton school"_<br>- Add the attribute _address_ with the value _972 Mission street_ |
 | 7-delete               | Delete all documents with _name="Holberton school"_ in the collection _school_ |
 | 8-all.py               | List all documents in a collection **in Python** |
 | 9-insert_school.py     | Insert a new document in a collection based on _kwargs_<br>- Prototype: *def insert_school(mongo_collection, **kwargs):*<br>- *mongo_collection* will be the _pymongo_ collection object |
