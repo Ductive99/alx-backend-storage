@@ -9,8 +9,8 @@ class Cache:
 
     def __init__(self) -> None:
         """Initiliazation"""
-        _redis = redis.Redis()
-        _redis.flushdb()
+        self._redis = redis.Redis()
+        self._redis.flushdb()
 
     def store(self, data: Union[str, bytes, int, float]) -> str:
         """Storage"""
