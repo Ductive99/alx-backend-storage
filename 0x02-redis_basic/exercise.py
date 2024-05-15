@@ -43,7 +43,7 @@ def replay(fn: Callable) -> None:
     try:
         val = int(val.decode("utf-8"))
     except Exception:
-        value = 0
+        val = 0
 
     print("{} was called {} times:".format(fname, val))
     inputs = r.lrange("{}:inputs".format(fname), 0, -1)
