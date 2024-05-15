@@ -19,7 +19,8 @@ class Cache:
         self._redis.set(key, data)
         return key
 
-    def get(self, key: str, fn: Callable) -> Union[str, bytes, int, float]:
+    def get(self, key: str, 
+            fn: Callable = None) -> Union[str, bytes, int, float]:
         """Gets a value from Redis storage"""
         val = self._redis.get(key)
         return fn(val) if fn is not None else val
