@@ -18,6 +18,7 @@ def count_calls(method: Callable) -> Callable:
 
     return wrapper
 
+
 def call_history(method: Callable) -> Callable:
     """ Stores the history of inputs and outputs for a function """
     inputKey = method.__qualname__ + ":input"
@@ -50,7 +51,7 @@ class Cache:
         self._redis.set(key, data)
         return key
 
-    def get(self, key: str, 
+    def get(self, key: str,
             fn: Callable = None) -> Union[str, bytes, int, float]:
         """Gets a value from Redis storage"""
         val = self._redis.get(key)
